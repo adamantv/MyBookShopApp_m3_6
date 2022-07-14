@@ -3,7 +3,7 @@ package com.example.MyBookShopApp.data;
 public class Book {
 
     private Integer id;
-    private String author;
+    private Integer authorId;
     private String title;
     private Integer priceOld;
     private Integer price;
@@ -12,7 +12,7 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", author='" + author + '\'' +
+                ", author='" + authorId + '\'' +
                 ", title='" + title + '\'' +
                 ", priceOld=" + priceOld +
                 ", price=" + price +
@@ -27,12 +27,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getAuthor() {
-        return author;
+    public Integer getAuthorId() {
+        return authorId;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthorId(Integer authorId) {
+        this.authorId = authorId;
     }
 
     public String getTitle() {
