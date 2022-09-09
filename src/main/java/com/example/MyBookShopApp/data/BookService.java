@@ -24,11 +24,10 @@ public class BookService {
 
         List<Book> books = jdbcTemplate.query("SELECT * FROM books", (ResultSet rs, int rownum)->{
             Book book = new Book();
-            log.info("rs: {}, rownum: {}", rs, rownum);
             book.setId(rs.getInt("id"));
-            book.setAuthorId(rs.getInt("authorId"));
+            book.setAuthorId(rs.getInt("author_id"));
             book.setTitle(rs.getString("title"));
-            book.setPriceOld(rs.getInt("priceOld"));
+            book.setPriceOld(rs.getInt("price_old"));
             book.setPrice(rs.getInt("price"));
             return book;
         });
