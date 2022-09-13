@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-//@RequestMapping("/bookshop")
 public class MainPageController {
 
     private final BookService bookService;
@@ -17,7 +16,7 @@ public class MainPageController {
         this.bookService = bookService;
     }
 
-    @GetMapping("/main")
+    @GetMapping({"/", "/main"})
     public String mainPage(Model model){
         model.addAttribute("bookData", bookService.getBooksData());
         return "index";
