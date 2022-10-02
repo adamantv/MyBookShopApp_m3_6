@@ -35,4 +35,23 @@ public class BookService {
         });
         return new ArrayList<>(books);
     }
+
+    public List<Book> getPostponedBooks() {
+
+        List<Book> books = jdbcTemplate.query("SELECT b.id AS id, b.author_id AS author_id, " +
+                "b.title AS title, b.price_old AS price_old, b.price AS price, " +
+                "a.first_name AS first_name, a.last_name AS last_name " +
+                "FROM books b LEFT JOIN authors a " +
+                "ON b.author_id = a.id LIMIT 3", (ResultSet rs, int rownum) -> {
+            Book book = new Book();
+            book.setId(rs.getInt("id"));
+            book.setAuthor(rs.getString("first_name") + " " + rs.getString("last_name"));
+            book.setTitle(rs.getString("title"));
+            book.setPriceOld(rs.getInt("price_old"));
+            book.setPrice(rs.getInt("price"));
+            return book;
+        });
+        return new ArrayList<>(books);
+    }
+
 }
