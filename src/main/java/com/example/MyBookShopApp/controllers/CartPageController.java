@@ -20,8 +20,8 @@ public class CartPageController {
 
     @ModelAttribute("booksFromCard")
     private List<Book> booksFromCard() {
-        return bookService.getPostponedBooks();
-    }
+        return bookService.getBooksFromCart();
+    } //for future logic. will be added later
 
 
     @GetMapping("/cart")

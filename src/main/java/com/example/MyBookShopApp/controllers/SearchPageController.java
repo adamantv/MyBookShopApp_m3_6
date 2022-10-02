@@ -9,23 +9,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
+
 @Controller
-public class RecentPageController {
+public class SearchPageController {
     private final BookService bookService;
 
     @Autowired
-    public RecentPageController(BookService bookService) {
+    public SearchPageController(BookService bookService) {
         this.bookService = bookService;
     }
 
-    @ModelAttribute("recentBooks")
-    public List<Book> recentBooks() {
+    //for future logic. will be added later
+    @ModelAttribute("searchResult")
+    public List<Book> searchResult() {
         return bookService.getBooksData();
-    } //for future logic. will be added later
+    }
 
-    @GetMapping("/books/recent")
-    public String recentPage() {
-        return "books/recent";
+    @GetMapping("/search")
+    public String searchPage() {
+        return "search/index";
     }
 
 }

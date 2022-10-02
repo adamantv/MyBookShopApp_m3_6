@@ -21,7 +21,7 @@ public class PopularPageController {
     @ModelAttribute("popularBooks")
     public List<Book> popularBooks() {
         return bookService.getBooksData();
-    }
+    } //for future logic. will be added later
 
     @GetMapping("/books/popular")
     public String popularPage() {

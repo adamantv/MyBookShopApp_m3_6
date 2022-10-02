@@ -52,7 +52,7 @@ public class BookService {
         return new ArrayList<>(books);
     }
 
-    public List<Book> booksFromCard() {
+    public List<Book> getBooksFromCart() {
         List<Book> books = jdbcTemplate.query("SELECT b.id AS id, b.author_id AS author_id, " +
                 "b.title AS title, b.price_old AS price_old, b.price AS price, " +
                 "a.first_name AS first_name, a.last_name AS last_name " +

@@ -22,17 +22,17 @@ public class MainPageController {
     @ModelAttribute("recommendedBooks")
     public List<Book> recommendedBooks() {
         return bookService.getBooksData();
-    }
+    } //for future logic. will be added later
 
     @ModelAttribute("recentBooks")
     public List<Book> recentBooks() {
         return bookService.getBooksData();
-    }
+    } //for future logic. will be added later
 
     @ModelAttribute("popularBooks")
     public List<Book> popularBooks() {
         return bookService.getBooksData();
-    }
+    } //for future logic. will be added later
 
     @GetMapping("/")
     public String mainPage() {
