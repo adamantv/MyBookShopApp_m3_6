@@ -48,7 +48,7 @@
         <div class="Section">
           <div class="search">
             <form class="form form_search" action="#" method="post" data-searchlimit="20">
-              <input class="search-input" id="querypage" name="querypage" type="text" placeholder="Search over 30 million book titles" value="Техника"/>
+              <input class="search-input" id="querypage" name="querypage" type="text" placeholder="Search over 30 million book titles" th:placeholder="#{search.searchPlaceholder}"/>
               <button class="search-button" type="submit" name="searchpage" id="searchpage"
               th:text="#{header.searchButton}">Поиск
               </button>
@@ -333,7 +333,7 @@
                 </div>
               </div>
             </div>
-            <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#" data-refreshshow="search" data-refreshoffset="20" data-refreshlimit="20" data-refreshquery="Техника">Показать еще</a>
+            <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#" data-refreshshow="search" data-refreshoffset="20" data-refreshlimit="20" data-refreshquery="Техника" th:text="#{button.more}">Показать еще</a>
             </div>
           </div>
         </div>
