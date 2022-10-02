@@ -46,7 +46,7 @@ p.error-browser
         <main class="Middle-main">
             <ul class="breadcrumbs">
                 <li class="breadcrumbs-item"><a
-                        href="/index.html" th:text="#{path.main}">Главная</a>
+                        href="/index.html" th:text="#{topbar.main}">Главная</a>
                 </li>
                 <li class="breadcrumbs-item breadcrumbs-item_current">
                     <span th:text="#{footer.help}">Помощь</span>
@@ -55,7 +55,7 @@ p.error-browser
             <h1 class="Middle-title" th:text="#{footer.help}">Помощь
             </h1>
             <div class="FAQ">
-                <strong class="FAQ-title">Наиболее частые вопросы:
+                <strong class="FAQ-title" th:text="#{faq.title}">Наиболее частые вопросы:
                 </strong>
                 <div class="HideBlock FAQ-block">
                     <header class="HideBlock-header HideBlock-trigger">
