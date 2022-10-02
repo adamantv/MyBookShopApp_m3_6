@@ -44,7 +44,7 @@ p.error-browser
 <div class="Middle">
     <div class="Middle-top">
         <div class="wrap">
-            <h1 class="Middle-title">Контакты
+            <h1 class="Middle-title" th:text="#{footer.contacts}">Контакты
             </h1>
         </div>
     </div>
@@ -53,13 +53,13 @@ p.error-browser
             <ul class="breadcrumbs">
                 <li class="breadcrumbs-item"><a href="/index.html">Главная</a>
                 </li>
-                <li class="breadcrumbs-item breadcrumbs-item_current"><span>Контакты</span>
+                <li class="breadcrumbs-item breadcrumbs-item_current" th:text="#{footer.contacts}"><span>Контакты</span>
                 </li>
             </ul>
             <div class="Contacts">
                 <div class="row">
                     <div class="row-block">
-                        <h2>Контакты
+                        <h2 th:text="#{footer.contacts}">Контакты
                         </h2>
                         <div class="Contacts-prop">
                             <strong class="Contacts-propTitle">Телефон:
