@@ -47,14 +47,15 @@ p.error-browser
             <ul class="breadcrumbs">
                 <li class="breadcrumbs-item"><a href="/index.html" th:text="#{topbar.main}">Главная</a>
                 </li>
-                <li class="breadcrumbs-item"><a href="/genres/index.html" th:text="#{path.books}">Книги</a>
+                <li class="breadcrumbs-item"><a href="/genres/index.html" th:text="#{main.books}">Книги</a>
                 </li>
-                <li class="breadcrumbs-item breadcrumbs-item_current" th:text="#{main.popular}"><span>Популярное</span>
+                <li class="breadcrumbs-item breadcrumbs-item_current" th:text="#{topbar.popular}">
+                    <span>Популярное</span>
                 </li>
             </ul>
             <div class="Section">
                 <div class="Section-header">
-                    <h1 class="Section-title" th:text="#{main.popular}">Популярное
+                    <h1 class="Section-title" th:text="#{topbar.popular}">Популярное
                     </h1>
                 </div>
                 <div class="Cards Cards_refresh">
