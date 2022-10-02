@@ -24,7 +24,7 @@ public class BookService {
                 "b.title AS title, b.price_old AS price_old, b.price AS price, " +
                 "a.first_name AS first_name, a.last_name AS last_name " +
                 "FROM books b LEFT JOIN authors a " +
-                "ON b.author_id = a.id", (ResultSet rs, int rownum) -> {
+                "ON b.author_id = a.id LIMIT 20", (ResultSet rs, int rownum) -> {
             Book book = new Book();
             book.setId(rs.getInt("id"));
             book.setAuthor(rs.getString("first_name") + " " + rs.getString("last_name"));
