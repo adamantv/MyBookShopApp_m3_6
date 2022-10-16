@@ -18,3 +18,9 @@ docker inspect container_id | grep IPAddress
 
 P.S.: Обратите внимание, --link some-postgres когда мы вызывали файл pgAdmin.
 Эта команда делает контейнер postgres видимым для контейнера pgAdmin.
+
+Работа с postgres через консоль
+Подключиться к контейнеру: docker exec -it some-postgres bash
+Зайти как пользователь: psql -U user
+(по умолчанию используется БД postgres, можно явно указать БД с помощью команды postgres-# \c test_base)
+Получить список таблиц в БД: \d
