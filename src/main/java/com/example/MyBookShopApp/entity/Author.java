@@ -1,7 +1,9 @@
-package com.example.MyBookShopApp.data;
+package com.example.MyBookShopApp.entity;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "authors")
@@ -12,6 +14,8 @@ public class Author {
     private Integer id;
     private String firstName;
     private String lastName;
+    @OneToMany(mappedBy = "author")
+    private List<Book> bookList = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -41,4 +45,13 @@ public class Author {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+    }
+
 }
