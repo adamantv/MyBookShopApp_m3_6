@@ -1,0 +1,26 @@
+server:
+  port: 8085
+
+spring:
+  web:
+    resources:
+      static-locations: classpath:/spring-frontend/
+  thymeleaf:
+    prefix: classpath:/spring-frontend/
+  messages:
+    basename: lang.messages
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: user
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      data-locations: classpath:data.sql
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    defer-datasource-initialization: true
