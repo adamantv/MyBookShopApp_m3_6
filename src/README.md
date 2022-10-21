@@ -1,4 +1,4 @@
-Подключение postgres и pgAdmin локально с помощью Docker
+**Подключение postgres и pgAdmin локально с помощью Docker**
 
 1. Запуск контейнера postgres
 docker pull postgres:latest (при необходимости)
@@ -24,3 +24,15 @@ P.S.: Обратите внимание, --link some-postgres когда мы в
 Зайти как пользователь: psql -U user
 (по умолчанию используется БД postgres, можно явно указать БД с помощью команды postgres-# \c test_base)
 Получить список таблиц в БД: \d
+
+
+**Порядок создания таблиц с помощью liquibase**
+1. Создать liquibase-outputChangeLog.xml c помощью команды: mvn liquibase:generateChangeLog, добавить его в файл db.changelog-master.xml
+2. Включить генерацию таблиц с помощью liquibase и отключить аналогичную опцию hibernate
+spring.liquibase.enabled=true
+spring.jpa.hibernate.ddl-auto=none
+Запустить приложение и убедиться, что все таблицы сущностей созданы в БД и добавились две новые таблицы логов
+3. Заполнить таблицу данными. Eсли БД ранее была заполнена другими способами, например, с помощью hibernate, то данные сохранятся в БД
+или можно заполнить их:
+ - по-старому, временно отключив liquibase и включив первоначальную инициализацию данных.
+ - через liquibase: сгенерировать файл changelog плагином и конце файла добавить новый changeSet (см. https://docs.liquibase.com/change-types/community/sql-file.html)

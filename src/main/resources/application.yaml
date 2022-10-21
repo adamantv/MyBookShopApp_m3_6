@@ -16,7 +16,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   sql:
     init:
-      #data-locations: classpath:data.sql
+      data-locations: classpath:data.sql
       mode: never
   jpa:
     hibernate:
