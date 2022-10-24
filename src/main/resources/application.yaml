@@ -17,15 +17,15 @@ spring:
   sql:
     init:
       data-locations: classpath:data.sql
-      mode: never
+      mode: always
   jpa:
     hibernate:
       ddl-auto: create-drop
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-    defer-datasource-initialization: false
+    defer-datasource-initialization: true
   liquibase:
-    enabled: true
+    enabled: false
     change-log: classpath:/db/changelog/db.changelog-master.xml
 
 logging:
